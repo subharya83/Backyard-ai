@@ -1,8 +1,42 @@
 ## Backyard AI 
 
+Designed for a 10 ft × 8 ft × 8 ft Container (Southern North Carolina Climate)
+
+
 ### Landscaping and land preparation
 
 ### Aquaponics System
+
+#### Schematic diagram
+```
+SIDE VIEW (10 ft length shown)  
+───────────────────────────────────────  
+|                                   |  
+|  Fish Tank (400 gal)              |  
+|  ┌───────────────────────┐        |  
+|  │ Tilapia              │←Biofilter|  
+|  └───────────────────────┘        |  
+|  ┌──────────────┐                 | 8 ft  
+|  │ PVC Pipes    │←1.5 ft gap      |  
+|  │ (4" NFT)     │   for access    |  
+|  ├──────────────┤                 |  
+|  │ PVC Pipes    │                 |  
+|  ├──────────────┤                 |  
+|  │ ... (5       │                 |  
+|  │  frames)     │                 |  
+|  └──────────────┘                 |  
+|___________________________________|  
+
+TOP VIEW (8 ft width shown)  
+───────────────────────────────────────  
+| Fish Tank (4 ft) | Grow Frames     |  
+|─────────────────|─────────────────|  
+|                 | Pipe 1 | Pipe 2 |  
+| Biofilter       | ... (8-10 pipes)|  
+|                 | Walkways (1.5 ft)|  
+───────────────────────────────────────  
+```
+
 Detailed [specs](./Specs-aquaponics.md). 
 
 ### Hydroponics System
@@ -13,16 +47,16 @@ Detailed [specs](./Specs-aeroponics.md).
 
 # Comparison of Aquaponics, Hydroponics, and Aeroponics Systems  
 
-**Designed for a 10 ft × 8 ft × 8 ft Container (Southern North Carolina Climate)**  
+ 
 
 | Category               | Aquaponics                     | Hydroponics (NFT)              | Aeroponics (HPA)               |
 |------------------------|--------------------------------|--------------------------------|--------------------------------|
 | **Description**        | Fish + plants symbiosis        | Nutrient-rich water flow       | Mist-fed roots                 |
-| **Total Cost**         | $1,500–$2,500                 | $1,200–$2,000                 | $2,000–$3,500                 |
-| **Power (Peak)**       | 450W (Winter)                 | 670W (Winter)                 | 2,500W (HPA pump + lights)     |
+| **Total Cost**         | $1,500–$2,500                  | $1,200–$2,000                  | $2,000–$3,500                 |
+| **Power (Peak)**       | 450W (Winter)                  | 670W (Winter)                  | 2,500W (HPA pump + lights)     |
 | **Water Use**          | Moderate (closed-loop)         | Low (recirculating)            | Very low (misting)             |
 | **Maintenance**        | Moderate (fish + plants)       | Low (nutrient checks)          | High (nozzle/pump monitoring)  |
-| **Plant Yield**        | ~100–150 plants               | ~200–300 plants               | ~150–180 plants               |
+| **Plant Yield**        | ~100–150 plants                | ~200–300 plants                | ~150–180 plants               |
 | **Food Variety**       | **Plants:** Lettuce, herbs, greens<br>**Fish:** Tilapia | **Plants:** Leafy greens, strawberries, herbs | **Plants:** Cannabis, tomatoes, gourmet herbs |
 | **Pros**              | - Organic nutrients from fish<br>- Dual harvest (fish + plants) | - Faster growth than soil<br>- Scalable | - Fastest growth (30% faster)<br>- 90% less water |
 | **Cons**              | - Complex balance (pH/ammonia)<br>- Fish care required | - Nutrient management<br>- Power dependency | - Expensive setup<br>- Pump failure kills plants |
