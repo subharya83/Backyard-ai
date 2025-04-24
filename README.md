@@ -40,6 +40,34 @@ TOP VIEW (8 ft width shown)
 Detailed [specs](./Specs-aquaponics.md). 
 
 ### Hydroponics System
+
+#### Schematic diagram
+SIDE VIEW (10 ft length shown)  
+───────────────────────────────────────  
+|                                   |  
+|  LED Lights (Optional)            | 8 ft  
+|  ┌──────────────┐                 |  
+|  │ PVC Pipes    │←1.5 ft gap      |  
+|  │ (4" NFT)     │   for access    |  
+|  ├──────────────┤                 |  
+|  │ PVC Pipes    │                 |  
+|  ├──────────────┤                 |  
+|  │ ... (6-8     │                 |  
+|  │  tiers)      │                 |  
+|  └──────────────┘                 |  
+|  Nutrient Reservoir (200 gal)     |  
+|___________________________________|  
+
+TOP VIEW (8 ft width shown)  
+───────────────────────────────────────  
+| Pipe 1 | Pipe 2 | ... | Pipe 10    |  
+|────────|────────| ... |────────────|  
+|        ← 8 ft PVC pipes (4" NFT) → |  
+|        (10-12 pipes per frame)     |  
+|                                    |  
+| Walkways (1.5 ft between frames)   |  
+───────────────────────────────────────  
+
 Detailed [specs](./Specs-hydroponics.md). 
 
 ### Aeroponics System
