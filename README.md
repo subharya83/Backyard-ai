@@ -81,6 +81,10 @@ Key Components:
 - Reservoir: 200 gal, submersible pump (600 GPH).
 - Spacing: 1.5 ft between frames for maintenance.
 
+#### Online resources
+- https://www.howtoaquaponic.com/designs/vertical-aquaponics-system/
+- 
+
 Detailed [specs](./Specs-hydroponics.md). 
 
 
