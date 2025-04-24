@@ -37,6 +37,14 @@ TOP VIEW (8 ft width shown)
 ───────────────────────────────────────  
 ```
 
+Key Components:
+
+- Fish Tank: 400 gal, tilapia (50–75 fish).
+- Biofilter: 50 gal barrel with K1 media.
+- Grow Frames: 5 frames × 8–10 pipes each (4" PVC).
+
+
+
 Detailed [specs](./Specs-aquaponics.md). 
 
 ### Hydroponics System
@@ -68,7 +76,11 @@ TOP VIEW (8 ft width shown)
 | Walkways (1.5 ft between frames)   |  
 ───────────────────────────────────────  
 
+
+
 Detailed [specs](./Specs-hydroponics.md). 
+
+
 
 ### Aeroponics System
 Detailed [specs](./Specs-aeroponics.md). 
