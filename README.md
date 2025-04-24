@@ -76,7 +76,10 @@ TOP VIEW (8 ft width shown)
 | Walkways (1.5 ft between frames)   |  
 ───────────────────────────────────────  
 
-
+Key Components:
+- Vertical NFT Frames: 6 frames × 10–12 pipes each (4" PVC, 8 ft long).
+- Reservoir: 200 gal, submersible pump (600 GPH).
+- Spacing: 1.5 ft between frames for maintenance.
 
 Detailed [specs](./Specs-hydroponics.md). 
 
