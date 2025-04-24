@@ -2,12 +2,14 @@
 
 ### Landscaping and land preparation
 
-
 ### Aquaponics System
-
+Detailed [specs](./Specs-aquaponics.md). 
 
 ### Hydroponics System
+Detailed [specs](./Specs-hydroponics.md). 
 
+### Aeroponics System
+Detailed [specs](./Specs-aeroponics.md). 
 
 # Comparison of Aquaponics, Hydroponics, and Aeroponics Systems  
 
