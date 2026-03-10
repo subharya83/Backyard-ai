@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Retaining Wall – Construction Diagram</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background:#f0ebe3; font-family:'Barlow Condensed',sans-serif; color:#1a1a1a; padding:24px; min-height:100vh; }
+  h1 { font-size:22px; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-align:center; margin-bottom:4px; color:#2c2c2c; }
+  .subtitle { text-align:center; font-size:13px; color:#666; letter-spacing:1px; margin-bottom:20px; font-family:'Share Tech Mono',monospace; }
+
+  .diagram-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:16px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  #top-view  { grid-column:1/4; }
+  #elev-panel{ grid-column:1/2; }
+  #xs-horiz  { grid-column:2/3; }
+  #xs-diag   { grid-column:3/4; }
+  #mat-panel { grid-column:1/4; }
+
+  .panel { background:#fff; border:1.5px solid #c8bfb0; border-radius:4px; padding:14px; }
+  .panel-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#7a6e62; margin-bottom:10px; border-bottom:1px solid #e0d9d0; padding-bottom:6px; font-family:'Share Tech Mono',monospace; }
+
+  .top-svg     { width:100%; height:240px; overflow:visible; }
+  .section-svg { width:100%; height:360px; }
+  .elev-svg    { width:100%; height:360px; }
+
+  .mat-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .mat-table th { background:#2c2c2c; color:#f0ebe3; padding:6px 10px; text-align:left; font-weight:600; letter-spacing:1px; font-size:11px; }
+  .mat-table td { padding:6px 10px; border-bottom:1px solid #e8e2da; vertical-align:top; }
+  .mat-table tr:last-child td { border-bottom:none; }
+  .mat-table tr:nth-child(even) td { background:#f7f3ee; }
+  .highlight { font-weight:700; color:#5c3d2e; }
+  .done { color:#4a7a3a; font-weight:700; }
+  .sub { font-size:11px; color:#666; }
+
+  text.dim   { font-family:'Share Tech Mono',monospace; font-size:10px; fill:#444; }
+  text.label { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; fill:#222; }
+  text.note  { font-family:'Share Tech Mono',monospace; font-size:9px; fill:#888; }
+  text.done  { font-family:'Share Tech Mono',monospace; font-size:9px; fill:#4a7a3a; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h1>Retaining Wall — Construction Drawings</h1>
+<div class="subtitle">
+  Straight 63′ · Banks 10′ each · Wall 5′ tall · Posts 6″×4″×96″ @ 7′ OC (INSTALLED) · Rock on back · Concrete (Quikrete 60 lb) on face · 4″ Perf. PVC Drain @ base
+</div>
+
+<div class="diagram-grid">
+
+<!-- ══════════════════════════════════════════════════════
+     PLAN VIEW — top-down
+     TOP = FACE of wall = fill dirt / raised yard
+     BOTTOM = BACK of wall = lower exposed side
+══════════════════════════════════════════════════════ -->
+<div class="panel" id="top-view">
+  <div class="panel-title">Plan View (Top-Down) — Fill Dirt on FACE side · Rock layer on BACK side · Posts INSTALLED</div>
+  <svg class="top-svg" viewBox="0 0 930 230" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="a1" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#444"/></marker>
+      <marker id="a2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#444"/></marker>
+      <!-- fill dirt hatch -->
+      <pattern id="dirt" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" fill="#e8d9b0"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#c4a060" stroke-width="1.8"/>
+      </pattern>
+      <!-- concrete (face layer) -->
+      <pattern id="conc" width="9" height="9" patternUnits="userSpaceOnUse">
+        <rect width="9" height="9" fill="#d8d4cc"/>
+        <line x1="0" y1="4.5" x2="9" y2="4.5" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="4.5" y1="0" x2="4.5" y2="9" stroke="#bbb" stroke-width="0.5"/>
+      </pattern>
+      <!-- rock hatch (back layer) -->
+      <pattern id="rock" width="10" height="10" patternUnits="userSpaceOnUse">
+        <rect width="10" height="10" fill="#b8b8b0"/>
+        <ellipse cx="5" cy="5" rx="3.5" ry="2.5" fill="#a0a098" opacity="0.7"/>
+      </pattern>
+    </defs>
+
+    <!-- FILL DIRT — FACE side (top of SVG) -->
+    <polygon points="55,18 130,75 130,83 55,26" fill="url(#dirt)" opacity="0.75"/>
+    <polygon points="55,18 130,18 130,75 55,18" fill="url(#dirt)" opacity="0.4"/>
+    <rect x="130" y="18" width="660" height="57" fill="url(#dirt)" opacity="0.4"/>
+    <rect x="130" y="75" width="660" height="8"  fill="url(#dirt)" opacity="0.75"/>
+    <polygon points="790,75 865,18 865,26 790,83" fill="url(#dirt)" opacity="0.75"/>
+    <polygon points="790,18 865,18 865,26 790,75" fill="url(#dirt)" opacity="0.4"/>
+    <text class="label" x="460" y="46" text-anchor="middle" fill="#8a6020">FILL DIRT / RAISED BACKYARD (FACE SIDE)</text>
+    <text class="note"  x="460" y="60" text-anchor="middle" fill="#9a7030">higher elevation — backyard leveled with fill</text>
+
+    <!-- LEFT BANK -->
+    <line x1="55" y1="26" x2="130" y2="84" stroke="#333" stroke-width="2.5"/>
+    <line x1="55" y1="35" x2="130" y2="97" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="55" y1="26" x2="55" y2="35" stroke="#555" stroke-width="2"/>
+    <text class="dim" x="20" y="44" transform="rotate(-30,20,44)">10′ bank</text>
+
+    <!-- WALL: concrete face strip (top/face side of band), then rock strip (bottom/back side) -->
+    <!-- Face = concrete: y=75..83, 8px wide -->
+    <rect x="130" y="75" width="660" height="8"  fill="url(#conc)" stroke="#333" stroke-width="1.2"/>
+    <!-- Back = rock: y=83..97, 14px wide -->
+    <rect x="130" y="83" width="660" height="14" fill="url(#rock)" stroke="#666" stroke-width="0.8"/>
+
+    <!-- Wall layer labels -->
+    <text class="note" x="10" y="81" fill="#4444aa">conc.</text>
+    <text class="note" x="10" y="93" fill="#555">rock</text>
+    <line x1="55" y1="79" x2="128" y2="79" stroke="#4444aa" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <line x1="55" y1="91" x2="128" y2="91" stroke="#888" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+    <!-- RIGHT BANK -->
+    <line x1="790" y1="84" x2="865" y2="26" stroke="#333" stroke-width="2.5"/>
+    <line x1="790" y1="97" x2="865" y2="35" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="865" y1="26" x2="865" y2="35" stroke="#555" stroke-width="2"/>
+    <text class="dim" x="872" y="44">10′ bank</text>
+
+    <!-- LOWER GRADE — BACK side (bottom of SVG) -->
+    <rect x="130" y="97" width="660" height="65" fill="#e0ecd4" opacity="0.55"/>
+    <text class="label" x="460" y="137" text-anchor="middle" fill="#4a6a2a">LOWER NATURAL GRADE (BACK / EXPOSED SIDE)</text>
+    <text class="note"  x="460" y="150" text-anchor="middle" fill="#4a6a2a">rock face visible here · wall face exposed</text>
+
+    <!-- POSTS — 6" wide (face dir) × 4" deep, shown as narrow rects straddling wall band -->
+    <!-- Scale: wall band ~22px total, post 6" wide in face dir shown as 6px tall rect, 4px in other -->
+    <!-- Posts oriented with 6" toward fill (top in plan = smaller dimension in plan = 4px wide, 6px tall) -->
+    <g fill="#8B5E3C" stroke="#5c3d20" stroke-width="0.8">
+      <!-- 6" face (vertical in SVG plan = toward fill), 4" depth (horizontal in SVG) -->
+      <rect x="127" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="200" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="273" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="346" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="419" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="492" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="565" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="638" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="712" y="74" width="6" height="6" rx="0.5"/>
+      <rect x="786" y="74" width="6" height="6" rx="0.5"/>
+    </g>
+    <text class="done" x="460" y="72" text-anchor="middle">✓ POSTS INSTALLED (6″ face toward fill)</text>
+
+    <!-- DEADMAN anchors into fill — straight wall only, 7 total starting 3' from left post, every 10' -->
+    <!-- Scale: 660px = 63ft → 1ft = 10.48px. Left post x=130. Positions: 3,13,23,33,43,53,63ft -->
+    <!-- x = 130 + ft×10.48: 161, 266, 371, 476, 581, 686, 791 -->
+    <g stroke="#7a3b1e" stroke-width="1.8" stroke-dasharray="6,3">
+      <line x1="161" y1="75" x2="161" y2="30"/>
+      <line x1="266" y1="75" x2="266" y2="30"/>
+      <line x1="371" y1="75" x2="371" y2="30"/>
+      <line x1="476" y1="75" x2="476" y2="30"/>
+      <line x1="581" y1="75" x2="581" y2="30"/>
+      <line x1="686" y1="75" x2="686" y2="30"/>
+      <line x1="791" y1="75" x2="791" y2="30"/>
+    </g>
+    <!-- Small footing dots at top of each deadman (in fill) -->
+    <g fill="#7a3b1e" opacity="0.7">
+      <rect x="155" y="27" width="12" height="5" rx="1"/>
+      <rect x="260" y="27" width="12" height="5" rx="1"/>
+      <rect x="365" y="27" width="12" height="5" rx="1"/>
+      <rect x="470" y="27" width="12" height="5" rx="1"/>
+      <rect x="575" y="27" width="12" height="5" rx="1"/>
+      <rect x="680" y="27" width="12" height="5" rx="1"/>
+      <rect x="785" y="27" width="12" height="5" rx="1"/>
+    </g>
+    <text class="note" x="460" y="22" text-anchor="middle" fill="#7a3b1e">↑ 7 deadman anchors (straight wall only · start 3′ from left post · every 10′) ↑</text>
+
+    <!-- 120° bank angles -->
+    <path d="M130,84 A32,32 0 0,1 107,59" fill="none" stroke="#555" stroke-width="1"/>
+    <text class="note" x="86" y="72">120°</text>
+    <path d="M790,84 A32,32 0 0,0 813,59" fill="none" stroke="#555" stroke-width="1"/>
+    <text class="note" x="810" y="72">120°</text>
+
+    <!-- 7′ OC -->
+    <line x1="130" y1="63" x2="203" y2="63" stroke="#444" stroke-width="0.8" marker-start="url(#a2)" marker-end="url(#a1)"/>
+    <text class="dim" x="166" y="60" text-anchor="middle">7′ OC</text>
+
+    <!-- 63' straight -->
+    <line x1="130" y1="178" x2="790" y2="178" stroke="#888" stroke-width="0.8" marker-start="url(#a2)" marker-end="url(#a1)"/>
+    <text class="dim" x="460" y="174" text-anchor="middle">63′ straight</text>
+
+    <!-- 83' total -->
+    <line x1="55" y1="192" x2="865" y2="192" stroke="#444" stroke-width="0.8" marker-start="url(#a2)" marker-end="url(#a1)"/>
+    <text class="dim" x="460" y="205" text-anchor="middle">83′ total (63′ straight + 10′ bank each end)</text>
+
+    <!-- ── DRAINAGE: 4" perforated PVC pipe, 64' along straight wall inside fill ── -->
+    <!-- Pipe runs parallel to wall face, inside fill strip, full straight run x=130..793 -->
+    <!-- Shown as orange line with perforation tick marks on top -->
+    <!-- Landscape fabric shown as dotted green line just above pipe -->
+    <!-- Both ends route THROUGH the banks toward the BACK (lower/exposed) side -->
+    <line x1="130" y1="68" x2="793" y2="68" stroke="#e07820" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <!-- Perforations (holes on top) — short tick marks above the pipe line -->
+    <g stroke="#c05800" stroke-width="1" opacity="0.7">
+      <line x1="160" y1="65" x2="160" y2="68"/> <line x1="200" y1="65" x2="200" y2="68"/>
+      <line x1="240" y1="65" x2="240" y2="68"/> <line x1="280" y1="65" x2="280" y2="68"/>
+      <line x1="320" y1="65" x2="320" y2="68"/> <line x1="360" y1="65" x2="360" y2="68"/>
+      <line x1="400" y1="65" x2="400" y2="68"/> <line x1="440" y1="65" x2="440" y2="68"/>
+      <line x1="480" y1="65" x2="480" y2="68"/> <line x1="520" y1="65" x2="520" y2="68"/>
+      <line x1="560" y1="65" x2="560" y2="68"/> <line x1="600" y1="65" x2="600" y2="68"/>
+      <line x1="640" y1="65" x2="640" y2="68"/> <line x1="680" y1="65" x2="680" y2="68"/>
+      <line x1="720" y1="65" x2="720" y2="68"/> <line x1="760" y1="65" x2="760" y2="68"/>
+    </g>
+    <!-- Landscape fabric: dashed green line above straight run only -->
+    <line x1="130" y1="63" x2="793" y2="63" stroke="#3a7a3a" stroke-width="1.2" stroke-dasharray="8,4" opacity="0.7"/>
+
+    <!-- LEFT END: pipe turns and routes through left bank toward BACK side -->
+    <!-- Bank runs from (55,26)→(130,84). Pipe at x=130,y=68 turns down-left through bank,
+         angles toward back (y increases = toward back). Exit point near (68,115) on back side. -->
+    <path d="M130,68 Q95,88 68,115" fill="none" stroke="#e07820" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <!-- Arrow at exit pointing toward back/away -->
+    <line x1="68" y1="115" x2="58" y2="128" stroke="#e07820" stroke-width="3" stroke-linecap="round" marker-end="url(#a1)"/>
+    <text class="note" x="30" y="138" fill="#e07820">→ corrugated</text>
+    <text class="note" x="30" y="147" fill="#e07820">PVC (back)</text>
+
+    <!-- RIGHT END: pipe turns and routes through right bank toward BACK side -->
+    <!-- Bank runs from (790,84)→(865,26). Pipe at x=793,y=68 turns down-right through bank,
+         exits near (852,115) on back side. -->
+    <path d="M793,68 Q825,88 852,115" fill="none" stroke="#e07820" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <line x1="852" y1="115" x2="862" y2="128" stroke="#e07820" stroke-width="3" stroke-linecap="round" marker-end="url(#a1)"/>
+    <text class="note" x="840" y="138" fill="#e07820">corrugated →</text>
+    <text class="note" x="840" y="147" fill="#e07820">PVC (back)</text>
+
+    <!-- Pipe label -->
+    <text class="note" x="460" y="58" text-anchor="middle" fill="#e07820">4″ perforated PVC drain pipe (64′) — holes on top — covered by landscape fabric — exits through banks to back</text>
+
+    <text class="note" x="4" y="48" fill="#8a6020">▲ FACE</text>
+    <text class="note" x="4" y="138" fill="#4a6a2a">▼ BACK</text>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     FRONT ELEVATION — viewed from low/back/exposed side
+══════════════════════════════════════════════════════ -->
+<div class="panel" id="elev-panel">
+  <div class="panel-title">Front Elevation — 63′ Straight · Viewed from Exposed (Low) Side</div>
+  <svg class="elev-svg" viewBox="0 0 420 310" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- rock = exposed back face -->
+      <pattern id="rockface" width="10" height="10" patternUnits="userSpaceOnUse">
+        <rect width="10" height="10" fill="#b8b8b0"/>
+        <ellipse cx="5" cy="5" rx="3.5" ry="2.5" fill="#a0a098" opacity="0.7"/>
+      </pattern>
+      <pattern id="dirt3" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" fill="#e8d9b0"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#c4a060" stroke-width="1.8"/>
+      </pattern>
+      <marker id="c1" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+      <marker id="c2" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+    </defs>
+
+    <!-- Fill dirt above wall top (behind, on face side) -->
+    <rect x="30" y="52" width="352" height="36" fill="url(#dirt3)" opacity="0.6"/>
+    <text class="note" x="206" y="70" text-anchor="middle" fill="#8a6020">Fill dirt / raised backyard (on face side behind wall)</text>
+    <line x1="20" y1="88" x2="400" y2="88" stroke="#8a6020" stroke-width="1.4" stroke-dasharray="6,3"/>
+    <text class="note" x="22" y="85" fill="#8a6020">raised grade (face side)</text>
+
+    <!-- Wall back face = ROCK layer visible from this side -->
+    <rect x="30" y="88" width="352" height="112" fill="url(#rockface)" stroke="#666" stroke-width="1.5"/>
+    <text class="note" x="206" y="148" text-anchor="middle" fill="#555">Rock layer (3″) — visible back face</text>
+
+    <!-- POSTS — 4" deep visible from back (narrow rectangle), 6" wide -->
+    <!-- Posts appear as vertical bars on the rock face. 4" depth shows from back. -->
+    <g fill="#8B5E3C" stroke="#5c3d20" stroke-width="1">
+      <rect x="30"  y="82" width="5" height="128"/>
+      <rect x="68"  y="82" width="5" height="128"/>
+      <rect x="107" y="82" width="5" height="128"/>
+      <rect x="146" y="82" width="5" height="128"/>
+      <rect x="185" y="82" width="5" height="128"/>
+      <rect x="223" y="82" width="5" height="128"/>
+      <rect x="262" y="82" width="5" height="128"/>
+      <rect x="301" y="82" width="5" height="128"/>
+      <rect x="340" y="82" width="5" height="128"/>
+      <rect x="378" y="82" width="5" height="128"/>
+    </g>
+    <text class="done" x="206" y="79" text-anchor="middle" fill="#4a7a3a">✓ POSTS INSTALLED — 4″ depth visible from back</text>
+
+    <!-- Rebar horizontal runs inside wall -->
+    <line x1="32" y1="116" x2="382" y2="116" stroke="#a04020" stroke-width="1" stroke-dasharray="6,4" opacity="0.7"/>
+    <line x1="32" y1="148" x2="382" y2="148" stroke="#a04020" stroke-width="1" stroke-dasharray="6,4" opacity="0.7"/>
+    <line x1="32" y1="180" x2="382" y2="180" stroke="#a04020" stroke-width="1" stroke-dasharray="6,4" opacity="0.7"/>
+    <text class="note" x="387" y="118" fill="#a04020">rebar</text>
+
+    <!-- Lower natural grade -->
+    <line x1="20" y1="200" x2="400" y2="200" stroke="#6a8a4a" stroke-width="1.8"/>
+    <rect x="30" y="200" width="352" height="16" fill="#c8ddb8" opacity="0.45"/>
+    <text class="note" x="22" y="215" fill="#4a6a2a">lower natural grade (viewer side)</text>
+
+    <!-- DRAINAGE: 4" PVC pipe cross-section — behind wall at base (on fill/face side, not visible here) -->
+    <!-- Shown as a ghost circle on each post bay to indicate pipe runs behind wall -->
+    <!-- Pipe center at y=193 (just above footing), behind rock face -->
+    <!-- Show as a single representative cross-section circle with callout -->
+    <circle cx="206" cy="191" r="7" fill="none" stroke="#e07820" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.8"/>
+    <circle cx="206" cy="191" r="2" fill="#e07820" opacity="0.6"/>
+    <!-- Landscape fabric above pipe shown as dotted line segment -->
+    <line x1="170" y1="183" x2="242" y2="183" stroke="#3a7a3a" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
+    <!-- Callout -->
+    <line x1="213" y1="186" x2="260" y2="168" stroke="#e07820" stroke-width="0.8"/>
+    <text class="note" x="262" y="165" fill="#e07820">4″ perf. PVC drain</text>
+    <text class="note" x="262" y="174" fill="#e07820">(behind wall, fill side)</text>
+    <text class="note" x="262" y="183" fill="#3a7a3a">— landscape fabric above</text>
+    <!-- End stubs shown at left and right edges -->
+    <line x1="30"  y1="191" x2="14"  y2="191" stroke="#e07820" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,2"/>
+    <line x1="382" y1="191" x2="398" y2="191" stroke="#e07820" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,2"/>
+    <text class="note" x="2"   y="189" fill="#e07820" text-anchor="end">←</text>
+    <text class="note" x="402" y="189" fill="#e07820">→</text>
+    <text class="note" x="206" y="230" text-anchor="middle" fill="#e07820">pipe ends connect to corrugated PVC at both ends</text>
+
+    <!-- Posts below grade (dashed) -->
+    <g fill="#6a4c2a" stroke="#5c3d20" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.6">
+      <rect x="30"  y="200" width="5" height="54"/>
+      <rect x="68"  y="200" width="5" height="54"/>
+      <rect x="107" y="200" width="5" height="54"/>
+      <rect x="146" y="200" width="5" height="54"/>
+      <rect x="185" y="200" width="5" height="54"/>
+      <rect x="223" y="200" width="5" height="54"/>
+      <rect x="262" y="200" width="5" height="54"/>
+      <rect x="301" y="200" width="5" height="54"/>
+      <rect x="340" y="200" width="5" height="54"/>
+      <rect x="378" y="200" width="5" height="54"/>
+    </g>
+
+    <!-- DIMS -->
+    <line x1="13" y1="88" x2="13" y2="200" stroke="#444" stroke-width="0.8" marker-start="url(#c2)" marker-end="url(#c1)"/>
+    <text class="dim" x="3" y="147" text-anchor="middle" transform="rotate(-90,3,147)">5′</text>
+    <line x1="13" y1="200" x2="13" y2="254" stroke="#7a5c3a" stroke-width="0.8" stroke-dasharray="3,2" marker-start="url(#c2)" marker-end="url(#c1)"/>
+    <text class="dim" x="3" y="231" text-anchor="middle" transform="rotate(-90,3,231)" fill="#7a5c3a">3′</text>
+    <line x1="33" y1="72" x2="72" y2="72" stroke="#444" stroke-width="0.8" marker-start="url(#c2)" marker-end="url(#c1)"/>
+    <text class="dim" x="52" y="69" text-anchor="middle">7′ OC</text>
+    <line x1="30" y1="275" x2="383" y2="275" stroke="#444" stroke-width="0.8" marker-start="url(#c2)" marker-end="url(#c1)"/>
+    <text class="dim" x="206" y="287" text-anchor="middle">63′ straight section</text>
+    <line x1="400" y1="82" x2="400" y2="254" stroke="#7a5c3a" stroke-width="0.8" stroke-dasharray="2,3"/>
+    <text class="note" x="410" y="170" transform="rotate(90,410,170)" fill="#7a5c3a">8′ post total</text>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     CROSS SECTION A — horizontal deadman
+     LEFT  = FACE / fill side (concrete 7-9" layer)
+     RIGHT = BACK / exposed side (rock 3" layer)
+══════════════════════════════════════════════════════ -->
+<div class="panel" id="xs-horiz">
+  <div class="panel-title">Cross Section A — Horizontal Concrete Deadman · Rock on Back · Concrete on Face</div>
+  <svg class="section-svg" viewBox="0 0 530 360" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- rock layer — back of wall -->
+      <pattern id="xs_rock" width="10" height="10" patternUnits="userSpaceOnUse">
+        <rect width="10" height="10" fill="#b8b8b0"/>
+        <ellipse cx="5" cy="5" rx="3.5" ry="2.5" fill="#a0a098" opacity="0.7"/>
+      </pattern>
+      <!-- concrete layer — face of wall (Quikrete) -->
+      <pattern id="xs_conc" width="8" height="8" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#d4d0c8"/>
+        <line x1="0" y1="4" x2="8" y2="4" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="4" y1="0" x2="4" y2="8" stroke="#bbb" stroke-width="0.5"/>
+      </pattern>
+      <!-- deadman concrete -->
+      <pattern id="xs_dm" width="8" height="8" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#bfbdb5"/>
+        <line x1="0" y1="4" x2="8" y2="4" stroke="#a8a5a0" stroke-width="0.6"/>
+        <line x1="4" y1="0" x2="4" y2="8" stroke="#a8a5a0" stroke-width="0.6"/>
+      </pattern>
+      <!-- fill dirt -->
+      <pattern id="xs_dirt" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" fill="#e8d9b0"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#c4a060" stroke-width="1.8"/>
+      </pattern>
+      <!-- footing concrete -->
+      <pattern id="xs_foot" width="10" height="6" patternUnits="userSpaceOnUse">
+        <rect width="10" height="6" fill="#c0bcb5"/>
+        <line x1="0" y1="3" x2="10" y2="3" stroke="#aaa" stroke-width="0.8"/>
+      </pattern>
+      <!-- wood grain for post -->
+      <pattern id="xs_wood" width="6" height="6" patternUnits="userSpaceOnUse">
+        <rect width="6" height="6" fill="#c8a060"/>
+        <line x1="0" y1="2" x2="6" y2="2" stroke="#a07040" stroke-width="0.5"/>
+        <line x1="0" y1="4" x2="6" y2="4" stroke="#a07040" stroke-width="0.5"/>
+      </pattern>
+      <marker id="b1" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+      <marker id="b2" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+    </defs>
+
+    <!--
+      Wall layout (left=FACE/fill, right=BACK/exposed):
+      x=0..230    fill dirt (FACE side)
+      x=230..252  concrete layer — 7-9", FACE side  (22px)
+      x=252..268  wood post — 4" depth visible      (16px)  [6" wide = vertical in this section]
+      x=268..286  rock layer — 3", BACK side        (18px)
+      x=286..530  lower natural grade (BACK side)
+      y=70   raised grade / fill surface
+      y=195  lower natural grade
+      y=254  post bottom (3' below lower grade)
+
+      Post is 6"×4": 6" oriented toward fill (horizontal = into fill in this view,
+      so in cross-section the 6" dimension runs left-right straddling the concrete/rock boundary,
+      and the 4" dimension runs vertically into the page — we show the cross-section face as 6" wide).
+    -->
+
+    <!-- FILL DIRT (face/left) -->
+    <rect x="0" y="70" width="230" height="125" fill="url(#xs_dirt)" opacity="0.68"/>
+    <line x1="0" y1="70" x2="230" y2="70" stroke="#8a6020" stroke-width="1.8" stroke-dasharray="6,3"/>
+    <text class="note" x="4" y="66" fill="#8a6020">raised grade / fill surface</text>
+    <text class="label" x="110" y="100" text-anchor="middle" fill="#8a6020">Fill Dirt</text>
+    <text class="note"  x="110" y="112" text-anchor="middle" fill="#9a7030">Raised backyard (FACE side)</text>
+
+    <!-- CONCRETE LAYER — face side, 7-9" thick -->
+    <rect x="230" y="70" width="22" height="125" fill="url(#xs_conc)" stroke="#5555aa" stroke-width="1.2"/>
+    <text class="note" x="218" y="128" text-anchor="middle" transform="rotate(-90,218,128)" fill="#4444aa">7-9″ concrete (Quikrete)</text>
+
+    <!-- WOOD POST — 6" wide (horizontal in this view), 4" into page -->
+    <!-- Shown as rectangle spanning concrete+rock interface, 6" wide total -->
+    <!-- Left edge at x=228 (into concrete side), right at x=270 -->
+    <rect x="228" y="70" width="42" height="125" fill="url(#xs_wood)" stroke="#5c3d20" stroke-width="1.5"/>
+    <!-- Post label -->
+    <text class="done" x="249" y="68" text-anchor="middle" fill="#4a7a3a" font-size="8">POST ✓</text>
+    <text class="note" x="249" y="208" text-anchor="middle" fill="#7a5c3a">6″ × 4″ wood</text>
+    <text class="note" x="249" y="217" text-anchor="middle" fill="#7a5c3a">(installed)</text>
+
+    <!-- Post below grade (dashed) -->
+    <rect x="228" y="195" width="42" height="59" fill="#c8a060" stroke="#5c3d20" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+    <!-- ROCK LAYER — back side, 3" thick -->
+    <rect x="270" y="70" width="18" height="125" fill="url(#xs_rock)" stroke="#888" stroke-width="0.8"/>
+    <text class="note" x="281" y="128" text-anchor="middle" transform="rotate(-90,281,128)" fill="#555">3″ rock</text>
+
+    <!-- Rebar inside concrete layer -->
+    <line x1="235" y1="72" x2="235" y2="193" stroke="#a04020" stroke-width="1.8" stroke-dasharray="5,3"/>
+    <text class="note" x="212" y="85" fill="#a04020">wall rebar</text>
+
+    <!-- WALL FOOTING (18"×6") below lower grade -->
+    <rect x="220" y="195" width="58" height="11" fill="url(#xs_foot)" stroke="#666" stroke-width="1"/>
+    <circle cx="232" cy="201" r="2.2" fill="#7a3b1e"/>
+    <circle cx="268" cy="201" r="2.2" fill="#7a3b1e"/>
+    <text class="note" x="284" y="204" fill="#666">wall footing 18″×6″</text>
+
+    <!-- LOWER NATURAL GRADE (back/right) -->
+    <rect x="288" y="195" width="242" height="22" fill="#c8ddb8" opacity="0.55"/>
+    <line x1="288" y1="195" x2="530" y2="195" stroke="#6a8a4a" stroke-width="1.8"/>
+    <text class="note" x="400" y="192" fill="#4a6a2a">lower natural grade (back — exposed)</text>
+    <text class="label" x="410" y="228" text-anchor="middle" fill="#4a6a2a">Lower Grade</text>
+    <text class="note"  x="410" y="240" text-anchor="middle" fill="#4a6a2a">Rock layer visible from here</text>
+
+    <!-- ── DEADMAN ASSEMBLY (horizontal, in fill) ── -->
+    <!-- Beam: x=60..230, y=118..132 (8" tall concrete beam) -->
+    <rect x="60" y="118" width="170" height="14" fill="url(#xs_dm)" stroke="#666" stroke-width="1.2"/>
+    <!-- Rebar inside beam -->
+    <line x1="62" y1="122" x2="230" y2="122" stroke="#a04020" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.85"/>
+    <line x1="62" y1="128" x2="230" y2="128" stroke="#a04020" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.85"/>
+    <circle cx="75"  cy="122" r="2" fill="#a04020"/>
+    <circle cx="75"  cy="128" r="2" fill="#a04020"/>
+    <circle cx="218" cy="122" r="2" fill="#a04020"/>
+    <circle cx="218" cy="128" r="2" fill="#a04020"/>
+
+    <!-- Deadman footer block (18"×18" concrete, at far end) -->
+    <rect x="36" y="106" width="24" height="44" fill="url(#xs_dm)" stroke="#555" stroke-width="1.5"/>
+    <circle cx="43" cy="115" r="2" fill="#a04020"/>
+    <circle cx="53" cy="115" r="2" fill="#a04020"/>
+    <circle cx="43" cy="140" r="2" fill="#a04020"/>
+    <circle cx="53" cy="140" r="2" fill="#a04020"/>
+
+    <!-- Rebar ties to wall rebar -->
+    <line x1="235" y1="100" x2="230" y2="122" stroke="#c06020" stroke-width="1.5"/>
+    <line x1="235" y1="148" x2="230" y2="128" stroke="#c06020" stroke-width="1.5"/>
+    <circle cx="230" cy="122" r="3" fill="none" stroke="#c06020" stroke-width="1.2"/>
+    <circle cx="230" cy="128" r="3" fill="none" stroke="#c06020" stroke-width="1.2"/>
+
+    <!-- Callout labels -->
+    <line x1="148" y1="132" x2="148" y2="158" stroke="#555" stroke-width="0.8"/>
+    <text class="note" x="68"  y="168" fill="#333">concrete deadman beam (~4′ into fill)</text>
+    <line x1="36" y1="150" x2="18" y2="170" stroke="#555" stroke-width="0.8"/>
+    <text class="note" x="2"  y="177" fill="#333">concrete</text>
+    <text class="note" x="2"  y="186" fill="#333">footer</text>
+    <text class="note" x="2"  y="195" fill="#333">(18″×18″)</text>
+    <line x1="233" y1="120" x2="310" y2="100" stroke="#c06020" stroke-width="0.8"/>
+    <text class="note" x="312" y="97"  fill="#c06020">rebar ties</text>
+    <text class="note" x="312" y="106" fill="#c06020">(looped wire)</text>
+    <text class="note" x="80" y="114" fill="#a04020">deadman rebar (2 bars)</text>
+
+    <!-- DIMS -->
+    <!-- Wall height -->
+    <line x1="508" y1="70" x2="508" y2="195" stroke="#444" stroke-width="0.8" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="518" y="136" transform="rotate(90,518,136)">5′ wall</text>
+    <!-- Post burial -->
+    <line x1="508" y1="195" x2="508" y2="254" stroke="#7a5c3a" stroke-width="0.8" stroke-dasharray="3,2" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="518" y="229" transform="rotate(90,518,229)" fill="#7a5c3a">3′</text>
+    <!-- Concrete layer thickness -->
+    <line x1="230" y1="52" x2="252" y2="52" stroke="#4444aa" stroke-width="0.8" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="241" y="49" text-anchor="middle" fill="#4444aa">7-9″</text>
+    <!-- Rock layer thickness -->
+    <line x1="270" y1="52" x2="288" y2="52" stroke="#666" stroke-width="0.8" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="279" y="49" text-anchor="middle" fill="#666">3″</text>
+    <!-- Total wall thickness -->
+    <line x1="230" y1="42" x2="288" y2="42" stroke="#333" stroke-width="0.8" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="259" y="39" text-anchor="middle">10-12″ total</text>
+    <!-- Deadman reach -->
+    <line x1="60" y1="104" x2="230" y2="104" stroke="#555" stroke-width="0.8" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="dim" x="145" y="101" text-anchor="middle">~4′ deadman reach</text>
+    <!-- Fill height -->
+    <line x1="20" y1="70" x2="20" y2="195" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2" marker-start="url(#b2)" marker-end="url(#b1)"/>
+    <text class="note" x="8" y="136" text-anchor="middle" transform="rotate(-90,8,136)" fill="#888">5′ diff</text>
+
+    <!-- FACE / BACK labels -->
+    <text class="note" x="4"   y="350" fill="#8a6020">◄ FACE (fill / concrete side)</text>
+    <text class="note" x="330" y="350" fill="#4a6a2a">BACK (rock / exposed) ►</text>
+
+    <!-- ── DRAINAGE: 4" perforated PVC pipe ──────────────────────
+         Sits at base of fill, just above footing level, against wall face.
+         Scale: 26px/ft → 4" dia = 4/12 × 26 ≈ 9px radius
+         Pipe center: x=190 (in fill, ~1.5ft from wall face), y=183 (just above footing y=195)
+         Holes on TOP of pipe. Landscape fabric drapes over pipe.
+         Pipe runs into page (64' long) — shown as circle cross-section.
+    -->
+    <!-- Landscape fabric — dashed green arc draped over pipe -->
+    <path d="M155,183 Q190,168 225,183" fill="none" stroke="#3a7a3a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.85"/>
+    <text class="note" x="155" y="165" fill="#3a7a3a">landscape fabric</text>
+    <!-- Pipe body (circle cross-section) -->
+    <circle cx="190" cy="183" r="9" fill="#fff8f0" stroke="#e07820" stroke-width="2"/>
+    <!-- Pipe wall thickness indicator -->
+    <circle cx="190" cy="183" r="6" fill="none" stroke="#e07820" stroke-width="0.8" opacity="0.4"/>
+    <!-- Holes on top — 3 small dots at top of pipe -->
+    <circle cx="186" cy="174" r="1.2" fill="#e07820" opacity="0.7"/>
+    <circle cx="190" cy="174" r="1.2" fill="#e07820" opacity="0.7"/>
+    <circle cx="194" cy="174" r="1.2" fill="#e07820" opacity="0.7"/>
+    <!-- Pipe label callout -->
+    <line x1="199" y1="177" x2="240" y2="160" stroke="#e07820" stroke-width="0.8"/>
+    <text class="note" x="242" y="157" fill="#e07820">4″ perf. PVC</text>
+    <text class="note" x="242" y="166" fill="#e07820">holes on top</text>
+    <text class="note" x="242" y="175" fill="#e07820">64′ long</text>
+    <!-- Gravel bed under pipe (optional visual) -->
+    <rect x="172" y="190" width="36" height="5" fill="#d4cfc0" stroke="#aaa" stroke-width="0.5" opacity="0.6"/>
+    <text class="note" x="190" y="200" text-anchor="middle" fill="#888">gravel bed</text>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     CROSS SECTION B — diagonal deadman (hand sketch)
+══════════════════════════════════════════════════════ -->
+<div class="panel" id="xs-diag">
+  <div class="panel-title">Cross Section B — Diagonal Concrete Deadman to Horizontal Footing (Hand Sketch)</div>
+  <svg class="section-svg" viewBox="0 0 530 360" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="ys_rock" width="10" height="10" patternUnits="userSpaceOnUse">
+        <rect width="10" height="10" fill="#b8b8b0"/>
+        <ellipse cx="5" cy="5" rx="3.5" ry="2.5" fill="#a0a098" opacity="0.7"/>
+      </pattern>
+      <pattern id="ys_conc" width="8" height="8" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#d4d0c8"/>
+        <line x1="0" y1="4" x2="8" y2="4" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="4" y1="0" x2="4" y2="8" stroke="#bbb" stroke-width="0.5"/>
+      </pattern>
+      <pattern id="ys_dm" width="8" height="8" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#bfbdb5"/>
+        <line x1="0" y1="4" x2="8" y2="4" stroke="#a8a5a0" stroke-width="0.6"/>
+        <line x1="4" y1="0" x2="4" y2="8" stroke="#a8a5a0" stroke-width="0.6"/>
+      </pattern>
+      <pattern id="ys_dirt" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" fill="#e8d9b0"/>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#c4a060" stroke-width="1.8"/>
+      </pattern>
+      <pattern id="ys_foot" width="10" height="6" patternUnits="userSpaceOnUse">
+        <rect width="10" height="6" fill="#c0bcb5"/>
+        <line x1="0" y1="3" x2="10" y2="3" stroke="#aaa" stroke-width="0.8"/>
+      </pattern>
+      <pattern id="ys_wood" width="6" height="6" patternUnits="userSpaceOnUse">
+        <rect width="6" height="6" fill="#c8a060"/>
+        <line x1="0" y1="2" x2="6" y2="2" stroke="#a07040" stroke-width="0.5"/>
+        <line x1="0" y1="4" x2="6" y2="4" stroke="#a07040" stroke-width="0.5"/>
+      </pattern>
+      <marker id="e1" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+      <marker id="e2" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L5,2.5 L0,5 Z" fill="#444"/></marker>
+    </defs>
+
+    <!-- Same wall layout as cross-section A -->
+    <!-- FILL DIRT (face/left) -->
+    <rect x="0" y="70" width="230" height="130" fill="url(#ys_dirt)" opacity="0.68"/>
+    <line x1="0" y1="70" x2="230" y2="70" stroke="#8a6020" stroke-width="1.8" stroke-dasharray="6,3"/>
+    <text class="note" x="4" y="66" fill="#8a6020">raised grade / fill surface</text>
+    <text class="label" x="110" y="100" text-anchor="middle" fill="#8a6020">Fill Dirt</text>
+    <text class="note"  x="110" y="112" text-anchor="middle" fill="#9a7030">Raised backyard (FACE side)</text>
+
+    <!-- CONCRETE LAYER — face side -->
+    <rect x="230" y="70" width="22" height="130" fill="url(#ys_conc)" stroke="#5555aa" stroke-width="1.2"/>
+    <text class="note" x="218" y="132" text-anchor="middle" transform="rotate(-90,218,132)" fill="#4444aa">7-9″ concrete (Quikrete)</text>
+
+    <!-- WOOD POST -->
+    <rect x="228" y="70" width="42" height="130" fill="url(#ys_wood)" stroke="#5c3d20" stroke-width="1.5"/>
+    <text class="done" x="249" y="68" text-anchor="middle" fill="#4a7a3a" font-size="8">POST ✓</text>
+    <text class="note" x="249" y="214" text-anchor="middle" fill="#7a5c3a">6″ × 4″ wood</text>
+
+    <!-- Post below grade (dashed) -->
+    <rect x="228" y="200" width="42" height="59" fill="#c8a060" stroke="#5c3d20" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+    <!-- ROCK LAYER — back side -->
+    <rect x="270" y="70" width="18" height="130" fill="url(#ys_rock)" stroke="#888" stroke-width="0.8"/>
+    <text class="note" x="281" y="132" text-anchor="middle" transform="rotate(-90,281,132)" fill="#555">3″ rock</text>
+
+    <!-- Rebar inside concrete layer -->
+    <line x1="235" y1="72" x2="235" y2="198" stroke="#a04020" stroke-width="1.8" stroke-dasharray="5,3"/>
+    <text class="note" x="212" y="85" fill="#a04020">wall rebar</text>
+
+    <!-- Wall footing -->
+    <rect x="220" y="200" width="58" height="11" fill="url(#ys_foot)" stroke="#666" stroke-width="1"/>
+    <circle cx="232" cy="206" r="2.2" fill="#7a3b1e"/>
+    <circle cx="268" cy="206" r="2.2" fill="#7a3b1e"/>
+    <text class="note" x="284" y="209" fill="#666">wall footing 18″×6″</text>
+
+    <!-- Lower grade -->
+    <rect x="288" y="200" width="242" height="22" fill="#c8ddb8" opacity="0.55"/>
+    <line x1="288" y1="200" x2="530" y2="200" stroke="#6a8a4a" stroke-width="1.8"/>
+    <text class="note" x="400" y="197" fill="#4a6a2a">lower natural grade (back — exposed)</text>
+    <text class="label" x="410" y="232" text-anchor="middle" fill="#4a6a2a">Lower Grade</text>
+    <text class="note"  x="410" y="244" text-anchor="middle" fill="#4a6a2a">Rock layer visible from here</text>
+
+    <!-- ── DIAGONAL DEADMAN ASSEMBLY ──
+         Wall: y=70 (fill/raised grade top) to y=200 (lower grade) = 130px = 5ft → 26px/ft
+         Attachment: 4ft from BASE of wall → y = 200 - 4×26 = 96  (1ft below fill surface)
+         Footing sits at LOWER GRADE level, x≈65, y=200
+         Strut: (230,96) → (65,200)  dx=-165 dy=+104  length≈195px ≈ 7.5ft
+         Perp unit: (104/195, 165/195)=(0.533,0.846) × 8px half-width → offset (4.3,6.8)
+         Corners:
+           Top-right: (234.3, 102.8)  Top-left: (225.7, 89.2)
+           Bot-left:  (60.7, 193.2)   Bot-right: (69.3, 206.8)
+    -->
+    <!-- Strut polygon (concrete) -->
+    <polygon points="226,89 234,103 69,207 61,193"
+             fill="url(#ys_dm)" stroke="#555" stroke-width="1.2"/>
+
+    <!-- Rebar inside strut (2 lines) -->
+    <line x1="227" y1="92"  x2="62"  y2="196" stroke="#a04020" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.85"/>
+    <line x1="232" y1="101" x2="67"  y2="205" stroke="#a04020" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.85"/>
+
+    <!-- Horizontal concrete footing at strut base (24"×8"), at lower grade level -->
+    <rect x="42" y="200" width="52" height="14" fill="url(#ys_dm)" stroke="#555" stroke-width="1.5"/>
+    <circle cx="54"  cy="206" r="2" fill="#a04020"/>
+    <circle cx="54"  cy="211" r="2" fill="#a04020"/>
+    <circle cx="84"  cy="206" r="2" fill="#a04020"/>
+    <circle cx="84"  cy="211" r="2" fill="#a04020"/>
+    <line x1="44" y1="206" x2="93" y2="206" stroke="#a04020" stroke-width="1" stroke-dasharray="4,3" opacity="0.8"/>
+    <line x1="44" y1="211" x2="93" y2="211" stroke="#a04020" stroke-width="1" stroke-dasharray="4,3" opacity="0.8"/>
+
+    <!-- Rebar ties at wall attachment point (x=230, y=96) -->
+    <line x1="235" y1="86"  x2="228" y2="92"  stroke="#c06020" stroke-width="1.8"/>
+    <circle cx="228" cy="92"  r="3.5" fill="none" stroke="#c06020" stroke-width="1.2"/>
+    <line x1="235" y1="106" x2="232" y2="101" stroke="#c06020" stroke-width="1.8"/>
+    <circle cx="232" cy="101" r="3.5" fill="none" stroke="#c06020" stroke-width="1.2"/>
+
+    <!-- Attachment height dim: 4ft from base -->
+    <line x1="248" y1="200" x2="248" y2="96"  stroke="#c06020" stroke-width="0.9" stroke-dasharray="3,2" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="258" y="152" transform="rotate(90,258,152)" fill="#c06020">4′ from base</text>
+
+    <!-- Dashed line showing 1ft below fill grade -->
+    <line x1="215" y1="96" x2="244" y2="96" stroke="#8a6020" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <text class="note" x="194" y="94" fill="#8a6020">1′ below fill surface →</text>
+
+    <!-- Angle arc at base -->
+    <path d="M230,200 A55,55 0 0,1 193,153" fill="none" stroke="#777" stroke-width="1"/>
+    <text class="note" x="184" y="168" fill="#555">~32°</text>
+
+    <!-- Strut length label along diagonal -->
+    <text class="note" x="126" y="152" fill="#333" transform="rotate(-32,126,152)">~7.5′ strut</text>
+
+    <!-- Labels -->
+    <line x1="148" y1="170" x2="148" y2="258" stroke="#555" stroke-width="0.8"/>
+    <text class="note" x="58"  y="268" fill="#333">concrete diagonal deadman strut</text>
+    <line x1="68"  y1="214" x2="32"  y2="240" stroke="#555" stroke-width="0.8"/>
+    <text class="note" x="2"   y="246" fill="#333">horizontal</text>
+    <text class="note" x="2"   y="255" fill="#333">concrete</text>
+    <text class="note" x="2"   y="264" fill="#333">footing</text>
+    <text class="note" x="2"   y="273" fill="#333">(24″×8″)</text>
+    <line x1="233" y1="94"  x2="310" y2="74"  stroke="#c06020" stroke-width="0.8"/>
+    <text class="note" x="312" y="71"  fill="#c06020">rebar ties</text>
+    <text class="note" x="312" y="80"  fill="#c06020">(looped wire)</text>
+    <text class="note" x="78"  y="178" fill="#a04020">strut rebar (2 bars)</text>
+
+    <!-- DIMS -->
+    <line x1="508" y1="70" x2="508" y2="200" stroke="#444" stroke-width="0.8" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="518" y="138" transform="rotate(90,518,138)">5′ wall</text>
+    <line x1="508" y1="200" x2="508" y2="259" stroke="#7a5c3a" stroke-width="0.8" stroke-dasharray="3,2" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="518" y="234" transform="rotate(90,518,234)" fill="#7a5c3a">3′</text>
+    <!-- Concrete layer -->
+    <line x1="230" y1="52" x2="252" y2="52" stroke="#4444aa" stroke-width="0.8" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="241" y="49" text-anchor="middle" fill="#4444aa">7-9″</text>
+    <!-- Rock layer -->
+    <line x1="270" y1="52" x2="288" y2="52" stroke="#666" stroke-width="0.8" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="279" y="49" text-anchor="middle" fill="#666">3″</text>
+    <!-- Total -->
+    <line x1="230" y1="42" x2="288" y2="42" stroke="#333" stroke-width="0.8" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="dim" x="259" y="39" text-anchor="middle">10-12″ total</text>
+    <!-- Strut horiz reach -->
+    <line x1="78" y1="188" x2="230" y2="188" stroke="#555" stroke-width="0.8" marker-start="url(#e2)" marker-end="url(#e1)" stroke-dasharray="4,2"/>
+    <text class="dim" x="154" y="185" text-anchor="middle">~3′ horiz. reach</text>
+    <!-- Fill height -->
+    <line x1="20" y1="70" x2="20" y2="200" stroke="#888" stroke-width="0.8" stroke-dasharray="3,2" marker-start="url(#e2)" marker-end="url(#e1)"/>
+    <text class="note" x="8" y="138" text-anchor="middle" transform="rotate(-90,8,138)" fill="#888">5′ diff</text>
+
+    <text class="note" x="4"   y="350" fill="#8a6020">◄ FACE (fill / concrete side)</text>
+    <text class="note" x="330" y="350" fill="#4a6a2a">BACK (rock / exposed) ►</text>
+
+    <!-- ── DRAINAGE: 4" perforated PVC pipe (same position as Cross-Section A) ── -->
+    <!-- Pipe center: x=190, y=185 (just above footing at y=200, in fill zone) -->
+    <path d="M155,185 Q190,170 225,185" fill="none" stroke="#3a7a3a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.85"/>
+    <text class="note" x="148" y="167" fill="#3a7a3a">landscape fabric</text>
+    <circle cx="190" cy="185" r="9" fill="#fff8f0" stroke="#e07820" stroke-width="2"/>
+    <circle cx="190" cy="185" r="6" fill="none" stroke="#e07820" stroke-width="0.8" opacity="0.4"/>
+    <circle cx="186" cy="176" r="1.2" fill="#e07820" opacity="0.7"/>
+    <circle cx="190" cy="176" r="1.2" fill="#e07820" opacity="0.7"/>
+    <circle cx="194" cy="176" r="1.2" fill="#e07820" opacity="0.7"/>
+    <line x1="199" y1="179" x2="310" y2="155" stroke="#e07820" stroke-width="0.8"/>
+    <text class="note" x="312" y="152" fill="#e07820">4″ perf. PVC drain</text>
+    <text class="note" x="312" y="161" fill="#e07820">holes on top · 64′ long</text>
+    <rect x="172" y="192" width="36" height="5" fill="#d4cfc0" stroke="#aaa" stroke-width="0.5" opacity="0.6"/>
+    <text class="note" x="190" y="205" text-anchor="middle" fill="#888">gravel bed</text>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MATERIALS TABLE — 60 lb bags only, posts already installed, rocks acquired
+══════════════════════════════════════════════════════ -->
+<div class="panel" id="mat-panel">
+  <div class="panel-title">Materials Summary — 60 lb Quikrete Bags Only · Both Deadman Configurations</div>
+  <p style="font-family:'Share Tech Mono',monospace;font-size:10px;color:#7a6e62;margin-bottom:10px;">
+    ✓ = Already complete / acquired. ★ = Differs between Cross-Section A and B.
+    7 deadmen total — straight wall only (63′), starting 3′ from left post, every 10′: positions at 3, 13, 23, 33, 43, 53, 63′.
+    Banks have no deadmen. 60 lb Quikrete bag ≈ 0.45 cu ft. 1 CY = 27 cu ft ≈ 60 bags @60 lb.
+  </p>
+  <table class="mat-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Size / Spec</th>
+        <th>Status</th>
+        <th>Cross-Section A — Horizontal Deadman<br><span style="font-size:10px;font-weight:400">60 lb bags (Quikrete)</span></th>
+        <th>Cross-Section B — Diagonal Deadman<br><span style="font-size:10px;font-weight:400">60 lb bags (Quikrete)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- POSTS -->
+      <tr>
+        <td class="highlight">Posts</td>
+        <td>6″×4″×96″ wood · 7′ OC</td>
+        <td class="done">✓ INSTALLED<br><span class="sub">3′ buried · 5′ above grade · 6″ face toward fill</span></td>
+        <td colspan="2" style="text-align:center;color:#4a7a3a">No concrete needed — already set</td>
+      </tr>
+      <!-- ROCKS -->
+      <tr>
+        <td class="highlight">Rock layer (back face)</td>
+        <td>3″ thick · 63′+ run</td>
+        <td class="done">✓ ACQUIRED</td>
+        <td colspan="2" style="text-align:center;color:#4a7a3a">Rocks on-site — no purchase needed</td>
+      </tr>
+      <!-- WALL CONCRETE — face layer -->
+      <tr>
+        <td class="highlight">Wall Concrete — face layer</td>
+        <td>7-9″ thick × 5′ tall × 63′ long (straight)<br><span class="sub">+ banks: 2 × 10′ × 5′ × 8″ avg</span></td>
+        <td>To purchase</td>
+        <td colspan="2">
+          Straight: 63 × 5 × 0.67 ft = 211 cu ft ÷ 27 = <strong>7.8 CY ≈ 469 bags @60 lb</strong><br>
+          Banks (2×): 2 × 10 × 3.5 avg ht × 0.67 = 47 cu ft ÷ 27 = <strong>1.7 CY ≈ 104 bags @60 lb</strong><br>
+          <strong>Wall concrete subtotal: ~573 bags @60 lb</strong>
+          <span class="sub"> (buy in rounds — cure between pours)</span>
+        </td>
+      </tr>
+      <!-- WALL FOOTING -->
+      <tr>
+        <td class="highlight">Wall Footing</td>
+        <td>18″ wide × 6″ thick · full 83′ run</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          83 × 1.5 × 0.5 = 62 cu ft ÷ 27 = <strong>2.3 CY ≈ 138 bags @60 lb</strong>
+        </td>
+      </tr>
+      <!-- DEADMAN BEAM — DIFFERS -->
+      <tr>
+        <td class="highlight">★ Deadman Beam (×7)</td>
+        <td>Concrete</td>
+        <td>To purchase</td>
+        <td>
+          Horizontal beam: 4′ × 8″ × 8″ × 7<br>
+          = 4 × 0.67 × 0.67 × 7 = 12.5 cu ft<br>
+          <strong>≈ 0.46 CY · ~28 bags @60 lb</strong>
+        </td>
+        <td>
+          Diagonal strut: 7.5′ × 8″ × 8″ × 7<br>
+          = 7.5 × 0.67 × 0.67 × 7 = 23.5 cu ft<br>
+          <strong>≈ 0.87 CY · ~52 bags @60 lb</strong>
+        </td>
+      </tr>
+      <!-- DEADMAN FOOTER — DIFFERS -->
+      <tr>
+        <td class="highlight">★ Deadman Footer (×7)</td>
+        <td>Concrete anchor</td>
+        <td>To purchase</td>
+        <td>
+          18″×18″×12″ block × 7<br>
+          = 1.5 × 1.5 × 1.0 × 7 = 15.75 cu ft<br>
+          <strong>≈ 0.58 CY · ~35 bags @60 lb</strong>
+        </td>
+        <td>
+          24″×8″×8″ footing × 7<br>
+          = 2 × 0.67 × 0.67 × 7 = 6.3 cu ft<br>
+          <strong>≈ 0.23 CY · ~14 bags @60 lb</strong>
+        </td>
+      </tr>
+      <!-- REBAR -->
+      <tr>
+        <td class="highlight">Rebar — Wall</td>
+        <td>#4 rebar</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          Horiz: 240 bars · Vert: 14 bars · Sides: 10 bars = <strong>264 pieces</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="highlight">★ Rebar — Deadman</td>
+        <td>#4 rebar</td>
+        <td>To purchase</td>
+        <td>
+          2 bars/beam × 7 + 4 bars/footer × 7 = <strong>42 pieces</strong>
+        </td>
+        <td>
+          2 bars/strut × 7 + 4 bars/footing × 7 = <strong>42 pieces</strong>
+        </td>
+      </tr>
+      <!-- REBAR TOTALS -->
+      <tr style="background:#f0ece4;">
+        <td class="highlight">Rebar Total</td>
+        <td></td>
+        <td></td>
+        <td><strong>306 pieces</strong> (264 wall + 42 deadman A)</td>
+        <td><strong>306 pieces</strong> (264 wall + 42 deadman B)</td>
+      </tr>
+      <!-- CONCRETE TOTALS -->
+      <tr style="background:#f0ece4;">
+        <td class="highlight">★ CONCRETE TOTAL<br><span class="sub">(wall face + footing + deadman)</span></td>
+        <td>60 lb Quikrete bags</td>
+        <td></td>
+        <td>
+          Wall face: 573<br>
+          Wall footing: 138<br>
+          Deadman beam (×7): 28<br>
+          Deadman footer (×7): 35<br>
+          <strong style="font-size:14px;">Total: ~774 bags @60 lb</strong>
+        </td>
+        <td>
+          Wall face: 573<br>
+          Wall footing: 138<br>
+          Deadman strut (×7): 52<br>
+          Deadman footing (×7): 14<br>
+          <strong style="font-size:14px;">Total: ~777 bags @60 lb</strong>
+        </td>
+      </tr>
+      <!-- DRAINAGE -->
+      <tr>
+        <td class="highlight">4″ Perforated PVC Pipe</td>
+        <td>4″ dia. SDR-35 or Schedule 40 PVC · perforated (holes on top)</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          64′ length along straight wall base, face/fill side<br>
+          <strong>64′ ÷ 10′ per stick = ~7 sticks of 10′ pipe</strong>
+          <span class="sub"> (buy 7–8 sticks to have a spare)</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="highlight">PVC Couplers (pipe joints)</td>
+        <td>4″ slip couplers</td>
+        <td>To purchase</td>
+        <td colspan="2">6 couplers to join 7 sticks · <strong>1 pack of 10 recommended</strong></td>
+      </tr>
+      <tr>
+        <td class="highlight">Corrugated PVC End Tubes</td>
+        <td>4″ corrugated flexible drain tube</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          2 tubes (one per end) to route water away from wall ends<br>
+          Length TBD based on site grading — <strong>recommend 10–20′ each</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="highlight">4″ Adapter Fittings</td>
+        <td>4″ PVC-to-corrugated adapter</td>
+        <td>To purchase</td>
+        <td colspan="2"><strong>2 fittings</strong> (one per end connection)</td>
+      </tr>
+      <tr>
+        <td class="highlight">Landscape Fabric</td>
+        <td>Non-woven geotextile · min 3 oz/sq yd</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          Drapes over pipe and extends ~18″ each side to keep soil out of pipe<br>
+          ~64′ × 3′ wide = <strong>192 sq ft ≈ 1 roll of 3′×100′</strong>
+        </td>
+      </tr>
+      <tr>
+        <td class="highlight">Drain Gravel / Pea Gravel</td>
+        <td>#57 stone or pea gravel · 3–4″ bed under pipe</td>
+        <td>To purchase</td>
+        <td colspan="2">
+          64′ × 1.5′ wide × 0.33′ deep = 32 cu ft ÷ 27 = <strong>≈1.2 CY (~1.5 tons)</strong>
+        </td>
+      </tr>
+      <!-- REBAR TIES -->
+      <tr>
+        <td class="highlight">Rebar Ties</td>
+        <td>Wire ties</td>
+        <td>To purchase</td>
+        <td colspan="2" style="text-align:center">1,000-pack — sufficient for both configurations</td>
+      </tr>
+      <!-- REFERENCE -->
+      <tr>
+        <td>Reference</td>
+        <td colspan="4">
+          1 CY = 27 cu ft · 60 lb Quikrete bag ≈ 0.45 cu ft · ~60 bags per CY ·
+          Wall face = concrete (Quikrete) 7-9″ on fill/face side ·
+          Rock layer 3″ on back/exposed side (acquired) ·
+          Posts 6″×4″×96″ already installed, 6″ toward fill face ·
+          Drain pipe: 4″ perforated PVC, holes facing UP, wrapped in landscape fabric, seated on gravel bed at base of fill against wall face, 64′ run, both ends connect to corrugated PVC runoff tubes
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:14px;font-family:'Share Tech Mono',monospace;font-size:10px;color:#aaa;">
+  NOT FOR CONSTRUCTION — PLANNING DIAGRAM ONLY
+</div>
+</body>
+</html>
