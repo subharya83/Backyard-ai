@@ -145,14 +145,16 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 
 # Analysis by Claude
 
-# Lowe's Purchase Log -- Deck Project
-
 **Store:** Lowe's Home Centers, LLC | 3250 East Franklin Blvd., Gastonia, NC 28056 | (704) 865-6767
+**Project:** Residential Retaining Wall Construction
+**Contractor:** Single contractor (sole operator)
 **Period:** March 19, 2026 -- March 31, 2026
 **Total Receipts:** 20
 **Receipt IDs:** R01 through R20 (assigned in chronological order)
 
-> Notes: "Bulk discount" on SAKRETE applies when purchasing 42 bags per transaction ($5.98 -> $5.68/bag, saving $0.30/bag = $12.60 per qualifying receipt). "Lowe's Money" is reward credit applied at checkout. "Cashback" entries on debit receipts reflect optional cash-back at point of sale and are not part of the project cost.
+> **Project Context:** All materials below were purchased by one contractor over a 13-day window, consistent with active daily site work. The purchase pattern -- high-volume concrete (376 bags over 13 days), OSB/sheathing (likely used as form boards), drainage PVC, subsurface electrical/conduit, and hardware -- is consistent with phased retaining wall construction including footing pours, form work, backfill drainage, and utility rough-in behind the wall.
+
+> **Notes on pricing:** "Bulk discount" on SAKRETE applies when purchasing 42 bags per transaction ($5.98 -> $5.68/bag, saving $0.30/bag = $12.60 per qualifying receipt). "Lowe's Money" is reward credit applied at checkout. "Cashback" entries on debit receipts reflect optional cash-back at point of sale and are not part of the project cost.
 
 ---
 
@@ -236,6 +238,7 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 ## Section 3: Material Category Summary
 
 ### Concrete and Masonry
+*Primary structural material -- used for wall footings and poured concrete courses/lifts*
 
 | SKU | Item | Receipts | Total Bags | Unit Price ($) | Pre-Tax Total ($) |
 |-----|------|----------|-----------:|---------------:|------------------:|
@@ -244,7 +247,8 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 | 132022 | SAKRETE 80-LB CONCRETE (21 bags @ $5.98) | R06, R07, R08, R09, R12, R13, R19, R20 | 168 | 5.98 | 1,004.64 |
 | | **Subtotal -- Concrete** | | **376 bags** | | **2,198.08** |
 
-### Sheathing and Subfloor
+### Sheathing and Form Boards
+*OSB and rated sheathing used as concrete form boards for wall construction and/or temporary bracing*
 
 | SKU | Item | Receipts | Total Sheets | Unit Price ($) | Pre-Tax Total ($) |
 |-----|------|----------|-------------:|---------------:|------------------:|
@@ -252,7 +256,8 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 | 12242 | 19/32 CAT RATED SHEATHING | R03, R07 | 8 | 27.48 | 219.84 |
 | | **Subtotal -- Sheathing** | | **12 sheets** | | **291.76** |
 
-### Plumbing and Piping
+### Drainage and Plumbing
+*PVC fittings and pipe for subsurface drainage behind the retaining wall -- weep holes, drain lines, and cleanouts are standard in wall construction to manage hydrostatic pressure*
 
 | SKU | Item | Receipts | Qty | Unit Price ($) | Pre-Tax Total ($) |
 |-----|------|----------|----:|---------------:|------------------:|
@@ -263,7 +268,8 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 | 1209838 | RB 3/16-IN X 100-FT MFP D | R04 | 1 roll | 9.38 | 9.38 |
 | | **Subtotal -- Plumbing** | | | | **105.13** |
 
-### Electrical Conduit and Wiring
+### Electrical Conduit, Wiring, and Low-Voltage Rough-In
+*Conduit, junction boxes, and wire runs for utilities behind or beneath the wall -- consistent with embedded conduit for landscape lighting, irrigation controls, or utility service runs installed before backfill*
 
 | SKU | Item | Receipts | Qty | Unit Price ($) | Pre-Tax Total ($) |
 |-----|------|----------|----:|---------------:|------------------:|
@@ -281,6 +287,7 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 | | **Subtotal -- Electrical/Conduit** | | | | **335.68** |
 
 ### Hardware, Accessories, and Consumables
+*Mixing tools, fasteners, and site consumables for daily concrete operations*
 
 | SKU | Item | Receipts | Qty | Unit Price ($) | Pre-Tax Total ($) |
 |-----|------|----------|----:|---------------:|------------------:|
@@ -295,10 +302,10 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 
 | Category | Pre-Tax Spend ($) | Share of Total (%) |
 |----------|------------------:|-------------------:|
-| Concrete and Masonry (376 bags SAKRETE) | 2,198.08 | 72.0 |
-| Sheathing and Subfloor (12 sheets) | 291.76 | 9.6 |
-| Electrical Conduit and Wiring | 335.68 | 11.0 |
-| Plumbing and Piping | 105.13 | 3.4 |
+| Concrete and Masonry -- Wall Footings/Pours (376 bags SAKRETE) | 2,198.08 | 72.0 |
+| Sheathing and Form Boards (12 sheets) | 291.76 | 9.6 |
+| Electrical Conduit, Wiring, and Low-Voltage Rough-In | 335.68 | 11.0 |
+| Drainage and Plumbing (behind-wall drain system) | 105.13 | 3.4 |
 | Hardware, Accessories, and Consumables | 124.24 | 4.1 |
 | **Grand Pre-Tax Total** | **3,054.89** | **100.0** |
 
@@ -321,3 +328,25 @@ All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases re
 | Lowe's Rewards Money | 2 | (10.00) |
 
 > *Debit Visa amounts in the table above reflect actual merchandise charges (invoice total), excluding cashback withdrawals on R08, R12, R13, and R18.*
+
+---
+
+## Section 5: Contractor Activity Summary
+
+| Date | Receipts | Daily Spend ($) | Primary Activity Inferred |
+|------|----------|----------------:|--------------------------|
+| 03-19-26 | R01 | 255.26 | Footing pour -- 42-bag concrete load |
+| 03-20-26 | R02 | 76.95 | Form board supply (subfloor OSB) |
+| 03-21-26 | R03 | 421.88 | Major pour day -- 42 bags concrete + sheathing forms + buckets |
+| 03-23-26 | R04 | 112.49 | Drainage and plumbing rough-in behind wall |
+| 03-24-26 | R05, R06, R07 | 504.52 | Heavy pour phase -- 62 bags across 3 trips; sheathing forms |
+| 03-25-26 | R08, R09, R10, R11 | 451.24 | Continued pour phase -- 83 bags; screws and mixer paddle added |
+| 03-26-26 | R12, R13 | 288.34 | Pour continuation -- 42 bags, 2 trips |
+| 03-27-26 | R14, R15 | 504.91 | Large pour (42 bags) + full electrical/conduit rough-in run |
+| 03-28-26 | R16 | 99.33 | Conduit boxes and fittings -- finishing electrical rough-in |
+| 03-29-26 | R17 | 10.20 | Single conduit stick -- minor supplement |
+| 03-30-26 | R18 | 255.26 | Final bulk pour -- 42 bags |
+| 03-31-26 | R19, R20 | 288.34 | Final pour day -- 42 bags; project closeout phase |
+| **TOTAL** | **20** | **3,268.72** | |
+
+> **Observations:** The contractor maintained an aggressive daily schedule with no gaps, purchasing materials each morning (most receipts show 6:00--10:00 AM timestamps). The consistent morning runs suggest daily site mixing operations. The 376 total bags of 80-lb SAKRETE (approximately 15 tons of dry mix) indicates a substantial poured concrete retaining wall, likely in multiple sections or lifts. The electrical and conduit work clustered on 03-27 and 03-28 suggests utility rough-in was completed after the primary wall mass was in place.
