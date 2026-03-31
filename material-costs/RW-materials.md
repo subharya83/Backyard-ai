@@ -79,4 +79,65 @@
 * **Estimated 7% Total Tax Applied:** $213.79
 * **Total Spent (Including Tax):** **$3,268.12**
 
+# Analysis by Grok 
 
+**Table of Materials Purchased (All 20 Lowe’s Receipts)**
+
+All purchases from Lowe’s Home Centers, LLC (Store #0457, Gastonia, NC).  
+Tax column shows **estimated sales tax at 7%** (the exact rate confirmed from every receipt).  
+Same items on the **same date** are combined.  
+Pre-tax costs are taken directly from the line-item totals on the receipts.
+
+| Purchase Date | Item Description                              | Quantity | Pre-Tax Cost ($) | Tax ($) |
+|---------------|-----------------------------------------------|----------|------------------|---------|
+| 03/19/26     | Sakrete 80-lb Concrete Mix                    | 42      | 238.56          | 16.70  |
+| 03/20/26     | 19/32" CAT OSB Subfloor                       | 4       | 71.92           | 5.03   |
+| 03/21/26     | Sakrete 80-lb Concrete Mix                    | 42      | 238.56          | 16.70  |
+| 03/21/26     | 5-gal Lowe’s Bucket-United                    | 4       | 18.32           | 1.28   |
+| 03/21/26     | 19/32" CAT Rated Sheathing                    | 5       | 137.40          | 9.62   |
+| 03/23/26     | 3/4-in × 100-ft Blue PEX                      | 1       | 55.98           | 3.92   |
+| 03/23/26     | 3-in PVC DWV Coupling                         | 3       | 11.52           | 0.81   |
+| 03/23/26     | 1/2-in PVC 1G Type FSE Box                    | 3       | 20.64           | 1.44   |
+| 03/23/26     | 3/16-in × 100-ft MFP D (RB)                   | 1       | 9.38            | 0.66   |
+| 03/23/26     | 3-in PVC DWV 90° Elbow                        | 1       | 7.61            | 0.53   |
+| 03/24/26     | Sakrete 80-lb Concrete Mix                    | 62      | 370.76          | 25.95  |
+| 03/24/26     | 5-gal Lowe’s Bucket-United                    | 4       | 18.32           | 1.28   |
+| 03/24/26     | 19/32" CAT Rated Sheathing                    | 3       | 82.44           | 5.77   |
+| 03/25/26     | Sakrete 80-lb Concrete Mix                    | 62      | 370.76          | 25.95  |
+| 03/25/26     | 2-in Tan Exterior Screw                       | 1       | 29.98           | 2.10   |
+| 03/25/26     | 30-in Eggbeater Mixer                         | 1       | 20.98           | 1.47   |
+| 03/26/26     | Sakrete 80-lb Concrete Mix                    | 42      | 251.16          | 17.58  |
+| 03/26/26     | 5-gal Lowe’s Bucket-United                    | 4       | 18.32           | 1.28   |
+| 03/27/26     | Sakrete 80-lb Concrete Mix                    | 42      | 238.56          | 16.70  |
+| 03/27/26     | 1-in PVC Sch 40 Conduit (10-ft)               | 3       | 28.59           | 2.00   |
+| 03/27/26     | 1-in PVC Type LR Conduit                      | 2       | 12.16           | 0.85   |
+| 03/27/26     | 1-in PVC Coupling                             | 3       | 2.16            | 0.15   |
+| 03/27/26     | 1/2-in PVC 1G Type FSCC Box                   | 3       | 8.88            | 0.62   |
+| 03/27/26     | 1-in PVC 40-90° Elbow                         | 3       | 5.94            | 0.42   |
+| 03/27/26     | 1-in PVC Type T Conduit Body                  | 1       | 5.28            | 0.37   |
+| 03/27/26     | 12/2 CU UF-B Underground Wire (100-ft)        | 1       | 138.00          | 9.66   |
+| 03/27/26     | CAT 6 Riser 23/4 Pair Cable (100-ft)          | 1       | 32.31           | 2.26   |
+| 03/28/26     | 1-in PVC Sch 40 Conduit (10-ft)               | 3       | 28.59           | 2.00   |
+| 03/28/26     | 8-in × 8-in × 4-in PVC Junction Box           | 1       | 38.98           | 2.73   |
+| 03/28/26     | 1-in PVC 1G Type FSE Box                      | 1       | 10.38           | 0.73   |
+| 03/28/26     | 1-in PVC Male Adapter                         | 4       | 4.32            | 0.30   |
+| 03/28/26     | 1-in PVC Type T Conduit Body                  | 2       | 10.56           | 0.74   |
+| 03/29/26     | 1-in PVC Sch 40 Conduit (10-ft)               | 1       | 9.53            | 0.67   |
+| 03/30/26     | Sakrete 80-lb Concrete Mix                    | 42      | 238.56          | 16.70  |
+| 03/31/26     | Sakrete 80-lb Concrete Mix                    | 42      | 251.16          | 17.58  |
+| 03/31/26     | 5-gal Lowe’s Bucket-United                    | 4       | 18.32           | 1.28   |
+| **Grand Totals** | —                                           | —       | **$3,054.89**   | **$213.84** |
+
+**Grand Total of All Elements (including tax)**  
+**$3,268.73**
+
+**Key Summary**  
+- **Total receipts analyzed**: 20  
+- **Date range**: March 19–31, 2026 (11 purchase days)  
+- **Total Sakrete 80-lb Concrete Mix**: 376 bags  
+- **Total 5-gal Lowe’s Buckets**: 16 buckets  
+- **Total sheathing / subfloor panels**: 12 sheets  
+- **PVC / electrical / plumbing supplies**: ≈ $420+ (conduit, boxes, elbows, couplings, wire, PEX, Cat6, etc.)  
+- **Other items**: Eggbeater mixer, exterior screws, etc.  
+
+All concrete orders noted “ITEMS MUST BE PICKED UP TODAY.” Bulk purchases received the $0.30-per-bag discount where shown. Payments were primarily debit/Visa (some with $10 cash back or My Lowe’s Money). No returns or adjustments on any receipt.
